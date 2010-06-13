@@ -1,0 +1,7 @@
+[user]
+	name = Your-name
+	email = your-email@foo.com
+[color]
+	ui = true
+[diff]
+	renamelimit=0
