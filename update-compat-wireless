@@ -1,0 +1,90 @@
+#!/bin/bash
+set -e
+
+DATE=$(date -I)
+COMPAT="compat-wireless"
+COMPAT_DIR="$COMPAT-2.6"
+
+COMPAT_DATE_DIR="${COMPAT}-${DATE}"
+ORIG_COMPAT_DATE_DIR="${COMPAT_DATE_DIR}"
+OUTPUT="/export/kernel/$COMPAT_DIR/"
+
+COMPAT_WIRELESS_TREE="$HOME/compat-wireless-2.6"
+LINUX_NEXT="$HOME/linux-next/"
+
+FILE_POSTFIX=""
+FLAGS=""
+
+export GIT_COMPAT_TREE="$HOME/compat/"
+export GIT_TREE="$LINUX_NEXT"
+
+cd $HOME || exit 2
+
+function update_git_tree {
+	cd "$1" || exit 2
+	git fetch origin
+	git repack -d
+	git reset --hard origin/master
+}
+
+for i in $COMPAT_WIRELESS_TREE $GIT_COMPAT_TREE $LINUX_NEXT; do
+	update_git_tree $i
+	echo > /dev/null
+done
+
+for i in noflags p c; do
+	cd $COMPAT_WIRELESS_TREE
+
+	if [[ $i != "noflags" ]]; then
+		FLAGS="$FLAGS -${i}"
+		# this will just be "pc" when using both
+		# pendign patches and crap patches
+		FILE_POSTFIX="${FILE_POSTFIX}$i"
+	fi
+	# NOTE: Although we have admin-refresh which does the two below
+	# we do these individually to catch errors.
+	./scripts/admin-clean.sh
+	./scripts/admin-update.sh $FLAGS 2>&1 > /dev/null
+	RET=$?
+	if [ $RET -ne 0 ]; then
+		echo -en "Error while updating from wireless-testing"
+		if [[ $i = "noflags" ]]; then
+			echo -en "\n"
+		else
+			echo -en "with flags: $FLAGS\n"
+		fi
+		exit $RET
+	fi
+
+	
+	if [[ $i != "noflags" ]]; then
+		COMPAT_DATE_DIR="${ORIG_COMPAT_DATE_DIR}-${FILE_POSTFIX}"
+	fi
+
+	cd ..
+	mkdir -p staging/
+	cp -a $COMPAT_DIR staging/${COMPAT_DATE_DIR}
+	rm -rf staging/${COMPAT_DATE_DIR}/.git/
+
+	cd staging
+
+	tar -jcf ${COMPAT_DATE_DIR}.tar.bz2 ${COMPAT_DATE_DIR}/
+
+	# Only clear these once
+	if [[ $i = "noflags" ]]; then
+		rm -f $OUTPUT/*.tar.bz2
+	fi
+
+	mv -f ${COMPAT_DATE_DIR}.tar.bz2 $OUTPUT
+	cd $OUTPUT
+
+	if [[ $i = "noflags" ]]; then
+		ln -sf $COMPAT_DATE_DIR.tar.bz2 $COMPAT_DIR.tar.bz2
+	fi
+
+	sha1sum *.tar.bz2 > sha1sums.txt
+
+	chmod 755 $OUTPUT/*
+done
+
+rm -rf $HOME/staging/

@@ -1,0 +1,10 @@
+linux-2.6-allstable
+linux-next
+compat-wireless-2.6
+compat
+.ssh
+.cache
+.viminfo
+.lesshst
+*~
+

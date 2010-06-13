@@ -1,0 +1,52 @@
+#!/bin/bash
+# Author: Luis R. Rodriguez <mcgrof@gmail.com>
+# This cronjob archives the compat-wireless-2.6 tarballs
+
+# Exit immediately if an error is encountered
+set -e
+
+# We know this is running through cron so we are sure we won't
+# have a race condition on the date ;)
+# That is -- don't schedule this at midnight!
+DATE=$(date -I)
+YEAR=$(date +%Y)
+MONTH=$(date +%m)
+
+COMPAT="compat-wireless"
+COMPAT_26="${COMPAT}-2.6"
+COMPAT_EXPORT="/export/kernel/"
+COMPAT_ARCHIVE="${COMPAT_EXPORT}/${COMPAT_26}/"
+COMPAT_DIR="${COMPAT_ARCHIVE}/"
+
+COMPAT_URL="http://wireless.kernel.org/download/${COMPAT_26}"
+COMPAT_TAR="${COMPAT}-${DATE}"
+ORIG_COMPAT_TAR="$COMPAT_TAR"
+COMPAT_TAR_URL="${COMPAT_URL}/${COMPAT_TAR}"
+COMPAT_TAR_URL_OLD="${COMPAT_URL}/${COMPAT_TAR_OLD}"
+COMPAT_SHA1="sha1sum.txt"
+COMPAT_SHA1_URL="${COMPAT_URL}/${COMPAT_SHA1}"
+
+DEST_DIR="${COMPAT_ARCHIVE}/${YEAR}/${MONTH}"
+mkdir -p $DEST_DIR
+
+#wget -q ${COMPAT_TAR_URL} 2>&1 > /dev/null
+#wget -o /dev/null -O - ${COMPAT_SHA1_URL} >> $COMPAT_SHA1
+
+for i in noflags p c; do
+        if [[ $i != "noflags" ]]; then
+                # this will just be "pc" when using both
+                # pending patches and crap patches
+                FILE_POSTFIX="${FILE_POSTFIX}$i"
+		COMPAT_TAR="${ORIG_COMPAT_TAR}-${FILE_POSTFIX}.tar.bz2"
+	else
+		COMPAT_TAR="${ORIG_COMPAT_TAR}.tar.bz2"
+        fi
+	if [ -f $COMPAT_ARCHIVE/$COMPAT_TAR ]; then
+		cp -f $COMPAT_ARCHIVE/$COMPAT_TAR $DEST_DIR
+	fi
+done
+
+cd $DEST_DIR
+/usr/bin/sha1sum *.tar.bz2 > $COMPAT_SHA1
+
+chmod 755 *

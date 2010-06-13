@@ -1,0 +1,8 @@
+#!/bin/bash
+
+$HOME/update-compat-wireless  2>&1 > /dev/null
+$HOME/archive-compat-wireless 2>&1 > /dev/null
+
+cat compat-wireless-2.6/code-metrics.txt | $HOME/skip-colors
+
+rsync -vl /export/kernel/compat-wireless-2.6/* wireless@wireless.kernel.org:www/download/compat-wireless-2.6/ 2>&1 > /dev/null
