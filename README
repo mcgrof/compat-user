@@ -1,0 +1,21 @@
+
+compat-user
+===========
+
+The compat-user git tree keeps track of the scripts
+used to generate new tarballs for release. You can use
+this git tree if you want to make your own releases
+on your own time, maybe with some small delta.
+
+To use this you will need to clone the following trees:
+
+git://git.kernel.org/pub/scm/linux/kernel/git/mcgrof/compat-wireless-2.6.git
+git://git.kernel.org/pub/scm/linux/kernel/git/mcgrof/compat.git
+git://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git
+
+Then clone this tree onto the home directory of an account you can set up
+cronjobs. Your cron job will look something similar to this:
+
+compat@repository3 ~ (git::master)$ crontab -l
+# m h  dom mon dow   command
+02 15 * * * $HOME/cron-compat | $HOME/skip-colors | mail -s "Compat-wireless release for $(date -I) is baked" foo@bar.com
