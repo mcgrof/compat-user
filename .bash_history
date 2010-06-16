@@ -1,106 +1,4 @@
 ls
-id
-pwd
-export GIT_COMPAT_TREE=/var/opt/compat/compat/
-vi .bashrc 
-./update-compat-wireless 
-ls
-vi ./update-compat-wireless 
-ls
-./archive-compat-wireless 
-ls
-vi archive-compat-wireless 
-ls /export/kernel/
-cd /export/kernel/compat-wireless-2.6-stable/
-ls
-cd ..
-ls
-cd compat-wireless-2.6
-ls
-chmod 755 *
-ls
-ls -l
-cd /export/kernel/compat-wireless-2.6
-ln -s compat-wireless-2010-01-13.tar.bz2 compat-wireless-2.6.tar.bz2
-ls -l
-vi /etc/apache2/sites-enabled/000-default 
-:q
-clear
-id
-cd
-clear
-pwd
-clear
-ls
-cd
-ls
-vi cron-compat 
-ls compat-wireless-2.6/
-ls ls compat
-ls
-ls -l /export/kernel/
-ls -l /export/kernel/compat-wireless-2.6/
-ls
-./cron-compat 
-ls
-ls -l /export/kernel/
-ls -l /export/kernel/compat-wireless-2.6/
-date
-crontab -l
-date
-echo $EDITOR
-which vim
-vi .bashrc 
-source .bashrc 
-crontab -e
-date
-ps -ef| grep cron
-date
-crontab -e
-echo hey | mail -s mcgrof@gmail.com
-echo hey | mail -s hey mcgrof@gmail.com
-crontab -e
-echo hey | mail -s hey mcgrof@gmail.com
-ls -l /etc/postfix/main.cf 
-sudo chmod o+r /etc/postfix/main.cf 
-echo hey | mail -s hey mcgrof@gmail.com
-id
-vi .bashrc 
-ls
-vi cron-compat 
-vi update-compat-wireless 
-date
-crontab -e
-date
-id
-cronab -l
-crontab -l
-cat cron-compat 
-cat update-compat-wireless 
-clear
-cat update-compat-wireless | less
-ls
-cat archive-compat-wireless 
-./update-compat-wireless 
-ls
-lsvi archive-compat-wireless 
-vi archive-compat-wireless 
-./archive-compat-wireless 
-ls /export/kernel/compat-wireless-2.6/compat-wireless-2010-01-15.tar.bz2
-vi archive-compat-wireless 
-./archive-compat-wireless 
-ls /export/kernel/compat-wireless-2.6/
-ls /export/kernel/compat-wireless-2.6/2010/
-ls /export/kernel/compat-wireless-2.6/2010/01/
-rm -f /export/kernel/compat-wireless-2.6/compat-wireless-2010-01-13.tar.bz2 
-ls /export/kernel/compat-wireless-2.6/2010/01/
-ls
-crontab -l
-crontab -e
-crontab -l
-ls
-cd /export/kernel/
-ls
 cd compat-wireless-2.6
 ls
 cd ../
@@ -498,3 +396,105 @@ ls -al $HOME
 cd $HOME
 pwd
 exit
+ls
+ls -l
+ls -l /export/kernel/
+mount /export/kernel/
+df /export/kernel/
+df -h /export/kernel/
+ls
+at dead.letter 
+cat dead.letter 
+rm -f dead.letter 
+ls -latr
+git init .
+git init 
+git add archive-compat-wireless
+git add skip-colors
+git add update-compat-wireless
+cp compat-wireless-2.6/.gitignore  .
+vi .gitignore 
+ls -latr
+vi .gitignore 
+ls -latr
+vi .gitignore 
+ls -latr
+vi .gitignore 
+cat .profile 
+ls -latr
+git add .profile
+git add .bash_logout
+vi .gitignore 
+git add .bash_logout
+git add .bash_history
+git status
+git add .bashrc
+git add .gitignore
+git add .vimrc
+ls -ld cron-compat
+git add cron-compat
+grep skip-color *
+rm -f skip-colors2
+ls
+git status
+vi .gitignore 
+git status
+git add .bash_history
+git add .gitignore
+git commit -a -s
+gitlog
+git log
+vi .bashrc 
+git diff
+source .bashrc 
+git commit -a -s
+git log
+git commit -a -s
+git log
+git comit --amend
+git commit --amend
+git log
+clear
+git log
+cd linux-next/
+git log
+cd ..
+cd
+vi .gitconfig
+git add .gitconfig
+git log
+git commit -a -s
+git log
+clear
+git log
+ls
+git log
+ls
+dpkg -l | grep postfix
+ls | mail -s test mcgrof@gmail.com
+less /var/log/messages
+cd compat
+git log
+git pull
+git log
+cd ..
+cd compat-wireless-2.6/
+git log
+ig tpull
+git pull
+git log
+cd ..
+cd linux-next/
+git fetch
+git reset -hard origin
+git reset --hard origin
+git log
+cd ..
+ls
+ls | mail -s poo2 mcgrof@gmail.com
+id
+ls | mail -s yay-mail-from-compat mcgrof@gmail.com
+crontab -e
+crontab -l
+./cron-compat | ./skip-colors | mail -s "Compat-wireless release for $(date -I) is baked" linux-wireless@vger.kernel.org,linux-bluetooth@vger.kernel.org
+./cron-compat | ./skip-colors | mail -s "Compat-wireless release for $(date -I)v2 is baked" linux-wireless@vger.kernel.org,linux-bluetooth@vger.kernel.org
