@@ -1,161 +1,3 @@
-ls
-cd compat-wireless-2.6
-ls
-cd ../
-ls
-cd compat-wireless-2.6-stable/
-ls
-cd v2.6.33/
-ls
-ls -l
-cp ~mcgrof/compat-wireless-2.6.33-rc5.tar.bz2 .
-ls -l
-chmod 755 *
-ls -l
-sha1sum *.tar.bz2 > sha1sums.txt 
-cat sha1sums.txt 
-ls
-cp ~mcgrof/ChangeLog-wireless ChangeLog-2.6.33-rc5-wireless
-vi ChangeLog-2.6.33-rc5-wireless
-ls
-du -h *
-cat sha1sums.txt 
-cd
-cd /export/kernel/
-ls
-cd compat-wireless-2.6
-ls
-link 
-man link
-man unlink 
-lnstat 
-man ln
-man link
-file /export/kernel/compat-wireless-2.6
-file /export/kernel/compat-wireless-2.6.
-file /export/kernel/compat-wireless-2.6/compat-wireless-2.6.tar.bz2 
-basename /export/kernel/compat-wireless-2.6/compat-wireless-2.6.tar.bz2
-man basename
-man readlink 
-readlink /export/kernel/compat-wireless-2.6/compat-wireless-2.6.tar.bz2
-cd
-pcd
-cd
-export HOME=/var/opt/compat/
-ls
-vi dead.letter 
-:q
-jjls
-ls
-rm -f dead.letter 
-ls
-id
-pwd
-cd
-ls
-vi cron-compat
-ls
-vi cron-compat
-ls
-vi cron-compat
-ls
-chmod 755 cron-compat 
-ls
-pwd
-id
-ssh localhost
-ls .ssh/
-ssh-keygen -t rsa
-ls
-pwd
-ssh wireless.kernel.org
-pwd
-hostname 
-id
-ssh wireless.kernel.org
-cat .ssh/id_rsa.pub 
-ssh wireless@wireless.kernel.org
-rsync -l /export/kernel/ wireless@wireless.kernel.org:bleh-test/
-rsync -al /export/kernel/ wireless@wireless.kernel.org:bleh-test/
-rsync -al /export/kernel/compat-wireless-2.6/ wireless@wireless.kernel.org:bleh-test/
-rsync -l /export/kernel/compat-wireless-2.6/ wireless@wireless.kernel.org:bleh-test/
-rsync -l --files-from /export/kernel/compat-wireless-2.6/ wireless@wireless.kernel.org:bleh-test/
-rsync --files-from /export/kernel/compat-wireless-2.6/ wireless@wireless.kernel.org:bleh-test/
-rsync -av--files-from /export/kernel/compat-wireless-2.6/ wireless@wireless.kernel.org:bleh-test/
-rsync -av --files-from /export/kernel/compat-wireless-2.6/ wireless@wireless.kernel.org:bleh-test/
-man fsync
-man rsync
-rsync -vl /export/kernel/compat-wireless-2.6/* wireless@wireless.kernel.org:bleh-test/
-ls -l /export/kernel/compat-wireless-2.6/
-cd /export/kernel/compat-wireless-2.6
-ls
-mv compat-wireless-2010-01-20.tar.bz2 2010/01/
-ls
-cd
-pwd
-export HOME=/var/opt/
-pwd
-id
-./archive-compat-wireless 
-ls
-vi update-compat-wireless 
-ls -l /export/kernel/compat-wireless-2.6-stable/v2.6.33/
-vi update-compat-wireless 
-ls -l .viminfo 
-rm -f .viminfo 
-clear
-ls
-cd
-cdp
-pwd
-export HOME=/var/opt/compat/
-pcd
-cd
-clear
-pwd
-ls
-rsync -vl /export/kernel/compat-wireless-2.6/* wireless@wireless.kernel.org:www/download/compat-wireless-2.6/
-vi cron-compat 
-crontab -l
-ls
-ls-l
-ls -l
-./update-compat-wireless 
-./archive-compat-wireless 
-ls
-cat cron-compat 
-rsync -vl /export/kernel/compat-wireless-2.6/* wireless@wireless.kernel.org:www/download/compat-wireless-2.6/
-cd compat-wireless-2.6/
-git log
-git pull
-git log
-cd ..
-ls
-cat cron-compat 
-export HOME=/var/opt/compat/
-cd
-pwd
-./cron-compat 
-ls
-cd linux-next/
-git fetch
-git log
-git log drivers/net/wireless/ath/ath9k/
-cd
-ls
-crontab -l
-./cron-compat | mail -s update-compat mcgrof@gmail.com
-ls
-cd compat-wireless-2.6/
-git log
-git pull
-git log
-cd ..
-ls
-./cron-compat 
-ls
-cd linux-next/
-git fetch
 cd ..
 ls
 cd compat
@@ -498,3 +340,161 @@ crontab -e
 crontab -l
 ./cron-compat | ./skip-colors | mail -s "Compat-wireless release for $(date -I) is baked" linux-wireless@vger.kernel.org,linux-bluetooth@vger.kernel.org
 ./cron-compat | ./skip-colors | mail -s "Compat-wireless release for $(date -I)v2 is baked" linux-wireless@vger.kernel.org,linux-bluetooth@vger.kernel.org
+ls
+git status
+history | less
+git commit -a -s
+git log
+git comit --amend
+git commit --amend
+git log
+git commit --amend
+git log
+vi .git/description 
+git log
+ls
+crontab -l
+git shiw
+git show
+ls
+crontab -l
+vi README
+ls
+vi README
+git add README
+git commit -a -s
+git log
+s
+ls
+cp /home/mcgrof/LICENSE  .
+ls
+git add LICENSE
+vi LICENSE 
+ls
+git add README
+git log
+git commti -a 
+git commit -a
+git log
+git config --list
+git clone --bare . compat-user.git
+ls -l compat-user.git/
+tar -jcvf compat-user.git.tar.bz2 compat-user.git/
+scp compat-user.git.tar.bz2 mcgrof@master.kernel.org:
+rm -rf compat-user.git*
+./cron-compat | ./skip-colors | mail -s "Compat-wireless release for $(date -I)-v2 is baked" linux-wireless@vger.kernel.org,linux-bluetooth@vger.kernel.org
+ls -l /etc/postfix/main.cf 
+./cron-compat | ./skip-colors | mail -s "Compat-wireless release for $(date -I)-v2 is baked" linux-wireless@vger.kernel.org,linux-bluetooth@vger.kernel.org
+exit
+crontab -e
+ls
+git diff
+ls
+cd compat
+git log
+git pull
+git log
+cd ..
+cd compat/
+cd compat-wireless-2.6/
+git pull
+git log
+git describe
+cd ..
+cd linux-next/
+git fetch
+git log
+git reset --hard origin
+cd ..
+ls
+crontab -l
+./cron-compat | ./skip-colors | mail -s test mcgrof@gmail.com
+./cron-compat | ./skip-colors mail -s "Compat-wireless release for $(date -I) is baked" linux-wireless@vger.kernel.org
+cd compat-wireless-2.6/
+make clean
+cd
+cd linux-next/
+make kernelversion
+cd ..
+./cron-compat 
+./cron-compat | ./skip-colors | mail -s test2 mcgrof@gmail.com
+./cron-compat | ./skip-colors mail -s "Compat-wireless release for $(date -I) is baked" linux-wireless@vger.kernel.org
+cd compat
+git pull
+git remotes
+git remote
+git pull ssh
+vi .git/config 
+git pull ssh master
+git log
+cd ..
+./cron-compat
+cd compat-wireless-2.6/
+git pull ssh master
+cd ..
+cd compat
+vi .git/config 
+cd ..
+vi compat-wireless-2.6/.gitcon
+vi compat-wireless-2.6/.git/config 
+git pull ssh master
+cd compat-wireless-2.6/
+git pull ssh master
+vi .git/config 
+git pull ssh master
+cd ..
+ls
+./cron-compat 
+ls
+cd /export/kernel/
+ls
+cd
+ln -s /export/kernel/ kernel
+ls -l
+cd kernel
+ls
+cd compat-wireless-2.6
+ls
+cd ..
+cd compat-wireless-2.6-stable/
+ls
+cd v2.6.34/
+ls
+cp /home/mcgrof//compat-wireless-2.6.34.1.tar.bz2 .
+ls -l
+chmod 755 *
+ls -l
+sha1sum *.tar.bz2 > sha1sums.txt 
+ls
+cp /home/mcgrof/ChangeLog-wireless ChangeLog-2.6.34.1-wireless 
+ls -l
+chmod 755 *
+ls -l
+cd ..
+ls
+cd v2.6.35/
+ls
+cp /home/mcgrof/compat-wireless-2.6.35-rc4.tar.bz2 .
+ls -l
+chmod 755 *
+ls
+sha1sum *.tar.bz2 > sha1sums.txt 
+ls
+cp /home/mcgrof/ChangeLog-wireless  ChangeLog-2.6.35-rc4-wireless
+ls
+chmod 755 *
+ls
+ls -l
+cat sha1sums.txt 
+du -h compat-wireless-2.6.35-rc4.tar.bz2
+cd ..
+cd v2.6.34/
+ls
+cat sha1sums.txt 
+du -h compat-wireless-2.6.34.1.tar.bz2
+ls
+cp /home/mcgrof/compat-wireless-2.6.34.1.tar.bz2 .
+ls
+sha1sum *.tar.bz2 > sha1sums.txt 
+cat sha1sums.txt 
+ls
