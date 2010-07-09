@@ -1,67 +1,3 @@
-cd ..
-cd compat-wireless-2.6/
-git pull
-git log
-cd ..
-ls
-crontab -l
-crontab -e
-crontab -l
-./cron-compat | mail -s update-compat-wireless mcgrof@gmail.com,hauke@hauke-m.de,proski@gnu.org
-ls
-crontab -l
-./cron-compat | mail -s update-compat-wireless mcgrof@gmail.com,hauke@hauke-m.de,proski@gnu.org
-pwd
-ls
-echo $GIT_TREE
-ls
-ls -latr
-vi .bashrc 
-ls
-cd compat-wireless-2.6/
-git log
-./scripts/admin-update.sh 
-cd ..
-ls
-vi .bashrc 
-source .bashrc 
-cd
-cd compat-wireless-2.6/
-./scripts/admin-update.sh 
-cd ..
-cd linux-next/
-git describe
-git fetch
-ls
-vi update-compat-wireless 
-which vim
-vi update-compat-wireless 
-vi .vimrc
-vi update-compat-wireless '
-vi update-compat-wireless 
-vi update-compat-wireless 
-vi archive-compat-wireless 
-vi update-compat-wireless 
-vi archive-compat-wireless 
-ls
-./update-compat-wireless 
-cd compat-wireless-2.6/
-git pull
-git log
-git describe
-git fetch --tags
-git describe
-cd ..
-ls
-./update-compat-wireless 
-vi update-compat-wireless 
-./update-compat-wireless 
-vi update-compat-wireless 
-./update-compat-wireless 
-vi update-compat-wireless 
-./update-compat-wireless 
-vi update-compat-wireless 
-ls
 vi archive-compat-wireless 
 ./update-compat-wireless 
 vi update-compat-wireless 
@@ -497,4 +433,68 @@ git diff
 git commit -a -s
 git log
 git show --stat
+git diff
+cd kernel
+ls
+cd compat-wireless-2.6-stable/
+ls
+cd v2.6.33/
+ls
+cp /home/mcgrof/compat-wireless-2.6.33.6.tar.bz2 .
+ls -l
+chmod 755 *
+sha1sum *.tar.bz2 > sha1sums.txt 
+ls
+cp /home/mcgrof/ChangeLog-wireless  ChangeLog-2.6.33.6-wireless
+ls -l
+chmod 755 *
+l s-l
+ls -l
+cat sha1sums.txt 
+du -h compat-wireless-2.6.33.6.tar.bz2
+ls
+cd ..
+cd v2.6.32/
+ls
+cp /home/mcgrof/compat-wireless-2.6.32.16.tar.bz2 .
+ls
+chmod 755 *
+ls
+sha1sum *.tar.bz2 > sha1sums.txt 
+ls
+cat sha1sums.txt 
+du -h compat-wireless-2.6.32.16.tar.bz2
+ls
+cp /home/mcgrof/ChangeLog-wireless ChangeLog-2.6.32.16-wireless 
+chmod 755 *
+cd
+git diff
+git remote
+git remote --help
+git remote add ssh-mcgrof ssh://mcgrof@master.kernel.org/pub/scm/linux/kernel/git/mcgrof/compat-user.git
+git diff
+git commit -a -s
+git commit -a -s --author="Luis R. Rodriguez <lrodriguez@atheros.com>"
+git push ssh-mcgrof
+git push ssh-mcgrof all
+git config --list
+git clone --bare .
+ls -latr
+ls -l ..git/
+rm -rf ..git/
+git clone --bare . compat-user.git
+ls -l compat-user.git/
+vi compat-user.git/description 
+tar -jcvf compat-user.git.tar.bz2 compat-user.git/
+scp compat-user.git.tar.bz2 mcgrof@master.kenrel.org:
+scp compat-user.git.tar.bz2 mcgrof@master.kernel.org:
+git push ssh-mcgrof all
+cd compat-
+cd compat-wireless-2.6/
+vi .git/config 
+cd 
+vi .git/config 
+git push ssh-mcgrof all
+git push all ssh-mcgrof 
+git push ssh-mcgrof master
 git diff
