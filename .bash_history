@@ -1,9 +1,4 @@
 cd ..
-ls
-cd compat
-git pull
-git log
-cd ..
 cd compat-wireless-2.6/
 git pull
 git log
@@ -498,3 +493,8 @@ ls
 sha1sum *.tar.bz2 > sha1sums.txt 
 cat sha1sums.txt 
 ls
+git diff
+git commit -a -s
+git log
+git show --stat
+git diff
