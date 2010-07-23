@@ -1,57 +1,3 @@
-vi archive-compat-wireless 
-./update-compat-wireless 
-vi update-compat-wireless 
-./update-compat-wireless 
-vi update-compat-wireless 
-./update-compat-wireless 
-vi update-compat-wireless 
-./update-compat-wireless 
-vi update-compat-wireless 
-./update-compat-wireless 
-vi update-compat-wireless 
-./update-compat-wireless 
-vi update-compat-wireless 
-./update-compat-wireless 
-ls
-./archive-compat-wireless 
-vi archive-compat-wireless 
-vi update-compat-wireless 
-vi archive-compat-wireless 
-./archive-compat-wireless 
-ls
-vi cron-compat 
-crontab -l
-./cron-compat | mail -s update-compat-wireless mcgrof@gmail.com,hauke@hauke-m.de,proski@gnu.org
-vi update-compat-wireless 
-ls
-./cron-compat 
-vi update-compat-wireless 
-cd compat-wireless-2.6/
-git pull
-git log
-cd ..
-./cron-compat 
-cd compat
-git pull
-vi .git/config 
-git pull ssh
-git pull ssh master
-git log
-cd ..
-ls
-./cron-compat 
-pwd
-cd compat-wireless-2.6/
-ls
-cd
-ls
-cd linux-next/
-git log
-git log drivers/net/atl1c
-git describe
-git fetch
-cd linux-next/
-git fetch
 git reset --hard origin
 git log
 cd ..
@@ -498,3 +444,57 @@ git push ssh-mcgrof all
 git push all ssh-mcgrof 
 git push ssh-mcgrof master
 git diff
+git commit -a -s
+git commit -a -s --author="Luis R. Rodriguez <lrodriguez@atheros.com>"
+git push ssh-mcgrof master
+crontab -e
+date
+ls
+cd compat-wireless-2.6/
+git log
+cd ..
+ls
+cd compat
+cd ..
+cd compat-wireless-2.6/
+git pull
+git log
+cd ..
+ls
+cronta b-l
+crontab -l
+./cron-compat | ./skip-colors mail -s "Compat-wireless release for $(date -I) is baked v2" linux-wireless@vger.kernel.org
+cd
+cd compat-wireless-2.6/
+./scripts/admin-update.sh 
+cd
+./cron-compat 
+ls -al
+cd
+ls -al
+exit
+ls
+rm -f compat-user.git.tar.bz2 
+ls
+cd kernel
+ls
+cd compat-wireless-2.6-stable/
+cd
+cd kernel/compat-wireless-2.6-stable/
+ls
+cd
+cd kernel/compat-wireless-2.6-stable/v2.6.35/
+ls
+cp /home/mcgrof/compat-wireless-2.6.35-rc6.tar.bz2 .
+sha1sum compat-wireless-2.6.35-rc6.tar.bz2
+sha1sum  *.bz2 > sha1sums.txt 
+ls -l
+chmod 755 *
+ls -l
+mv /home/mcgrof/ChangeLog-2.6.35-rc6-wireless .
+ls -l
+ls
+chmod 755 *
+ls -l
+du -h compat-wireless-2.6.35-rc*
+sha1sum compat-wireless-2.6.35-rc6.tar.bz2
