@@ -43,7 +43,8 @@ for i in noflags p c; do
 	fi
 	# NOTE: Although we have admin-refresh which does the two below
 	# we do these individually to catch errors.
-	./scripts/admin-clean.sh
+	rm -rf *
+	git checkout -f
 	./scripts/admin-update.sh $FLAGS 2>&1 > /dev/null
 	RET=$?
 	if [ $RET -ne 0 ]; then
