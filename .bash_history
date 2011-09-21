@@ -1,125 +1,3 @@
-cp /home/mcgrof/compat-wireless-2.6.37-rc5-2-s.tar.bz2 .
-ls
-chmod 755 *
-ls
-sha1sum  *.tar.bz2 > sha1sums.txt 
-cp /home/mcgrof/ChangeLog-2.6.37-wireless .
-ls -l
-ls -ltr
-ls
-ls -ltr
-sha1sum compat-wireless-2.6.37-rc5-2-s.tar.bz2
-sha1sum compat-wireless-2.6.37-rc5-2.tar.bz2
-du -h compat-wireless-2.6.37-rc5-2-s.tar.bz2 compat-wireless-2.6.37-rc5-2.tar.bz2
-cd kernels
-ls
-cd kernel//compat-wireless-2.6-stable/
-ls
-cd v2.6.37/
-ls
-cp /home/mcgrof/compat-wireless-2.6.37-rc5-3-sn.tar.bz2 .
-ls
-chmod 755 *
-sha1sum  *.tar.bz2 > sha1sums.txt 
-du -h compat-wireless-2.6.37-rc5-3-sn.tar.bz2
-sha1sum compat-wireless-2.6.37-rc5-3-sn.tar.bz2
-cd kernel/compat-wireless-2.6-stable/
-ls
-cd v2.6.37/
-ls
-cp /home/mcgrof/compat-wireless-2.6.37-rc5-4-sn.tar.bz2 .
-chmod 755 *
-sha1sum  *.tar.bz2 > sha1sums.txt 
-sha1sum compat-wireless-2.6.37-rc5-4-sn.tar.bz2
-cd kernel/compat-wireless-2.6-stable/v2.6.37/
-ls
-cp /home/mcgrof/compat-wireless-2.6.37-rc6-2-sp.tar.bz2 .
-ls
-chmod 755 *
-sha1sum  *.tar.bz2 > sha1sums.txt 
-cp /home/mcgrof/ChangeLog-2.6.37-wireless .
-chmod 755 *
-ls -l
-du -h 
-du -h compat-wireless-2.6.37-rc6-2-sp.tar.bz2
-cp /home/mcgrof/compat-wireless-2.6.37-rc6-3-sn.tar.bz2 .
-ls
-chmod 755 *
-sha1sum  *.tar.bz2 > sha1sums.txt 
-ls
-ls -ltr
-sha1sum compat-wireless-2.6.37-rc6-3-sn.tar.bz2
-ls
-du -h compat-wireless-2.6.37-rc6-3-sn.tar.bz2
-cp /home/mcgrof/compat-wireless-2.6.37-rc6-3.tar.bz2 .
-ls
-chmod 755 *
-ls
-sha1sum *.tar.bz2 > sha1sums.txt 
-ls -ltr
-cp /home/mcgrof/ChangeLog-2.6.37-wireless .
-ls
-ls -l compat-wireless-2.6.37-rc6-3*
-ls
-ls -l
-sha1sum compat-wireless-2.6.37-rc6-3.tar.bz2
-cp /home/mcgrof/compat-wireless-2.6.37-rc6-3.tar.bz2 .
-ls
-sha1sum *.tar.bz2 > sha1sums.txt 
-sha1sum compat-wireless-2.6.37-rc6-3.tar.bz2
-du -h compat-wireless-2.6.37-rc6-3.tar.bz2
-cd kernel/compat-wireless-2.6-stable/
-ls
-cd v2.6.37/
-ls
-cp /home/mcgrof/compat-wireless-2.6.37-1*  .
-ls
-chmod 755 *
-sha1sum compat-wireless-2.6.37-1-sn.tar.bz2
-sha1sum compat-wireless-2.6.37-1.tar.bz2
-du -h compat-wireless-2.6.37-1-sn.tar.bz2
-du -h compat-wireless-2.6.37-1.tar.bz2
-ls
-cp /home/mcgrof/ChangeLog-2.6.37-wireless .
-chmod 755 ChangeLog-2.6.37-wireless
-ls -l ChangeLog-2.6.37-wireless
-cd
-cd kernel/compat-wireless-2.6-stable/v2.6.37/
-ls
-cp /home/mcgrof/compat-wireless-2.6.37-2* .
-sha1sum *.tar.bz2 > sha1sums.txt 
-sha1sum compat-wireless-2.6.37-2*
-cp /home/mcgrof/ChangeLog-2.6.37-wireless .
-ls
-chmod 755 *
-du -h compat-wireless-2.6.37-2*
-clear
-ls
-cd kernel/compat-wireless-2.6-stable/v2.6.37/
-ls
-cp /home/mcgrof/compat-wireless-2.6.37-3* .
-chmod 755 *
-ls
-cp /home/mcgrof/ChangeLog-2.6.37-wireless .
-chmod 755 *
-ls
-cd kernel/
-ls
-mkdir compat-wireless-2.6-stable-mods
-mkdir compat-wireless-2.6-stable-modsls
-cd compat-wireless-2.6-stable/
-ls
-cd v2.6.36/
-ls
-mkdir mods
-ls
-cd mods/
-ls
-cp /home/mcgrof/compat-wireless-2.6.36-5-spn-google-2011-01-07.tar.bz2 .
-ls
-chmod 755 *
-ls
-chmod 755 * > sha1sums.txt
 ls
 chmod 755 *
 ls
@@ -498,3 +376,125 @@ ls
 cd ..
 ls
 mv compat-wireless-3.0 compat-wireless-3.0-stable/
+cd kernel
+ls
+cd compat-wireless-st
+cd compat-wireless-3.0-stable/
+cd ..
+ls
+mv compat-wireless-3.0-stable/  compat-wireless-3-stable/
+ls
+cd compat-wireless-3-stable/v3.0/
+ls
+cp /home/mcgrof/compat-wireless-3.0-rc4-1.tar.bz2 .
+ls
+chmod 755 *
+ls
+cp /home/mcgrof/ChangeLog-3.0.0-wireless .
+ls
+chmod 755 *
+ls
+sha1sum *.tar.bz2 > sha1sums.txt 
+ls
+mv ChangeLog-3.0.0-wireless  ChangeLog-3.0-wireless 
+cd
+pwd
+ls
+mkdir genlogs
+cp /home/mcgrof/genlog-3.0 genlogs/
+git add genlogs/
+git commit -a -s
+git log
+git config --list
+git push ssh-mcgrof
+git log
+ls
+cd kernel
+ls
+cd compat-wireless-3-stable/
+ls
+cd v3.0
+ls
+cat sha1sums.txt 
+du -h *
+ls
+vi ChangeLog-3.0-wireless 
+cd kernel
+ls
+cd compat-wireless-st
+cd compat-wireless-2.6-stable/
+ls
+cd ..
+ls
+cd compat-wireless-3-stable/
+ls
+cd v3.0
+ls
+cp /home/mcgrof/compat-wireless-3.0-1.tar.bz2 .
+chmod 755 *
+ls
+sha1sum *.tar.bz2 > sha1sums.txt 
+ls
+cat sha1sums.txt 
+cp /home/mcgrof/ChangeLog-3.0-wireless .
+ls
+sha1sum compat-wireless-3.0-1.tar.bz2
+du -h *
+cd kernel
+ls
+cd compat-wireless-3-stable/
+ls
+cd v3.0
+ls
+cp /home/mcgrof/ChangeLog-3.0-wireless .
+cp /home/mcgrof/compat-wireless-3.0-2.tar.bz2 .
+sha1sum *.tar.bz2 > sha1sums.txt 
+ls
+chmod 755 *
+ls
+du -h *
+sha1sum compat-wireless-3.0-2.tar.bz2
+cp /home/mcgrof/compat-wireless-3.1-rc1-1.tar.bz2 .
+sha1sum compat-wireless-3.1-rc1-1.tar.bz2
+mkdir -p kernel/compat-wireless-3-stable/v3.1
+mv compat-wireless-3.1-rc1-1.tar.bz2 kernel/compat-wireless-3-stable/v3.1
+cd kernel/compat-wireless-3-stable/v3.1
+ls
+chmod 755 *
+ls -l ../v3.0
+sha1sum compat-wireless-3.1-rc1-1.tar.bz2 > sha1sums.txt
+ls
+chmod 755 *
+ls
+cp /home/mcgrof/ChangeLog-3.1-wireless .
+ls
+chmod 755 *
+du -h *
+cat sha1sums.txt 
+ls
+clear
+ls
+vi cron-compat 
+vi update-compat-wireless 
+vi compat-wireless-2.6/.git/config 
+vi compat/.git/config 
+ls
+vi update-compat-wireless 
+crontab -l
+vi update-compat-wireless 
+$HOME/cron-compat | $HOME/skip-colors | mail -s "Compat-wireless release for $(date -I) is baked" linux-wireless@vger.kernel.org
+vi compat/.git//config 
+vi linux-next/.git/config 
+cd
+pwd
+ls
+crontab -e
+clear
+ls
+crontab -
+crontab -l
+$HOME/cron-compat | $HOME/skip-colors | mail -s "Compat-wireless release for $(date -I) is baked" linux-wireless@vger.kernel.org
+vi update-compat-wireless 
+ls
+vi cron-compat 
+crontab -e
