@@ -127,4 +127,6 @@ for i in noflags p c; do
 	chmod 755 $OUTPUT/*
 done
 
+cd $OUTPUT
+cat ckmake-report.log
 rm -rf $STAGING
