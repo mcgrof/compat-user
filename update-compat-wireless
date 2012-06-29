@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+#set -e
 
 # Set this empty and it will use kernel.org,
 # as that is the origin
@@ -7,7 +7,7 @@ SOURCE="github"
 
 DATE=$(date -I)
 COMPAT="compat-wireless"
-COMPAT_DIR="$COMPAT-2.6"
+COMPAT_DIR="${COMPAT}"
 
 COMPAT_DATE_DIR="${COMPAT}-${DATE}"
 ORIG_COMPAT_DATE_DIR="${COMPAT_DATE_DIR}"
@@ -15,6 +15,8 @@ OUTPUT="/export/kernel/$COMPAT_DIR/"
 
 COMPAT_WIRELESS_TREE="$HOME/compat-wireless-2.6"
 LINUX_NEXT="$HOME/linux-next/"
+
+STAGING="/var/opt/compat/staging/"
 
 FILE_POSTFIX=""
 FLAGS=""
@@ -44,10 +46,14 @@ for i in noflags p c; do
 		# this will just be "pc" when using both
 		# pendign patches and crap patches
 		FILE_POSTFIX="${FILE_POSTFIX}$i"
+	else
+		FLAGS=""
+		FILE_POSTFIX=""
 	fi
 	# NOTE: Although we have admin-refresh which does the two below
 	# we do these individually to catch errors.
 	rm -rf *
+	rm -f .compat_*
 	git checkout -f
 	./scripts/admin-update.sh $FLAGS 2>&1 > /dev/null
 	RET=$?
@@ -67,29 +73,51 @@ for i in noflags p c; do
 	fi
 
 	cd ..
-	mkdir -p staging/
-	cp -a $COMPAT_DIR staging/${COMPAT_DATE_DIR}
-	rm -rf staging/${COMPAT_DATE_DIR}/.git/
+	mkdir -p $STAGING
+	rm -rf $STAGING/${COMPAT_DATE_DIR}
+	cp -a $COMPAT_DIR $STAGING/${COMPAT_DATE_DIR}
+	rm -rf $STAGING/${COMPAT_DATE_DIR}/.git/
 
-	cd staging
+	cd $STAGING
 
 	tar -jcf ${COMPAT_DATE_DIR}.tar.bz2 ${COMPAT_DATE_DIR}/
 
-	# Only clear these once
+	# Only test this once, and only for the most complex tarballs
 	if [[ $i = "noflags" ]]; then
-		rm -f $OUTPUT/*.tar.bz2
+
+		cd ${COMPAT_DATE_DIR}/
+		$HOME/compat/bin/ckmake
+		if [[ $? -ne 0 ]]; then
+			exit 1
+		fi
+
+		rm -f $OUTPUT/${ORIG_COMPAT_DATE_DIR}*.tar.bz2
+		cd $STAGING
+
+		bzip2 ${COMPAT_DATE_DIR}/ckmake.log
+		chmod 755 ${COMPAT_DATE_DIR}/ckmake-report.log ${COMPAT_DATE_DIR}/ckmake.log.bz2
+
+		cp ${COMPAT_DATE_DIR}/ckmake.log.bz2 $OUTPUT/ckmake-${DATE}.log.bz2
+		cp ${COMPAT_DATE_DIR}/ckmake-report.log $OUTPUT/ckmake-report-${DATE}.log
+
+		cd $OUTPUT
+		ln -s ckmake-${DATE}.log.bz2 ckmake.log.bz2
+		ln -s ckmake-report-${DATE}.log ckmake-report.log
 	fi
 
+	cd $STAGING
 	mv -f ${COMPAT_DATE_DIR}.tar.bz2 $OUTPUT
 	cd $OUTPUT
 
 	if [[ $i = "noflags" ]]; then
-		ln -sf $COMPAT_DATE_DIR.tar.bz2 $COMPAT_DIR.tar.bz2
+		ln -sf ${COMPAT_DATE_DIR}.tar.bz2 ${COMPAT_DIR}.tar.bz2
 	fi
 
+	# The archiving is handled by archive-compat-wireless
+	# This run is just for the top level directory.
 	sha1sum *.tar.bz2 > sha1sums.txt
 
 	chmod 755 $OUTPUT/*
 done
 
-rm -rf $HOME/staging/
+rm -rf $STAGING
