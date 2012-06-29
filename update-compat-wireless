@@ -27,8 +27,13 @@ export GIT_TREE="$LINUX_NEXT"
 cd $HOME || exit 2
 
 function update_git_tree {
+	SRC=""
 	cd "$1" || exit 2
-	git fetch $SOURCE
+	if [[ "$1" != "$LINUX_NEXT" ]]; then
+		SRC="$SOURCE"
+	fi
+	echo "git fetch $SRC ($PWD)"
+	git fetch $SRC
 	git repack -d
 	git reset --hard origin/master
 }
