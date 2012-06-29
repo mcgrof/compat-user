@@ -88,6 +88,8 @@ for i in noflags p c; do
 		cd ${COMPAT_DATE_DIR}/
 		$HOME/compat/bin/ckmake
 		if [[ $? -ne 0 ]]; then
+			cd $STAGING
+			rm -rf *
 			exit 1
 		fi
 
