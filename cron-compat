@@ -1,6 +1,6 @@
 #!/bin/bash
 
-$HOME/update-compat-wireless  2>&1 > /dev/null
+$HOME/update-compat-wireless  | $HOME/skip-colors
 $HOME/archive-compat-wireless 2>&1 > /dev/null
 
 cat compat-wireless-2.6/code-metrics.txt | $HOME/skip-colors
