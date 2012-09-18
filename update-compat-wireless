@@ -93,10 +93,12 @@ for i in noflags p c; do
 		cd ${COMPAT_DATE_DIR}/
 		$HOME/compat/bin/ckmake
 		if [[ $? -ne 0 ]]; then
+			echo "Failed..."
 			cd $STAGING
 			rm -rf *
 			exit 1
 		fi
+		echo "Worked!"
 
 		rm -f $OUTPUT/${ORIG_COMPAT_DATE_DIR}*.tar.bz2
 		cd $STAGING
