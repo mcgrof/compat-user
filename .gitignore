@@ -8,3 +8,7 @@ compat
 .lesshst
 *~
 .bash_history
+.vimrc
+.bashrc
+.profile
+.bash_logout
